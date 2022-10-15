@@ -28,5 +28,5 @@ Navigate to [localhost:8080](http://localhost:8080).
 - [TypeScript](https://www.typescriptlang.org/)
 - [Svelte](https://svelte.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
-- [OpenWeather][https://openweathermap.org/]
+- [OpenWeather API](https://openweathermap.org/)
 ---
