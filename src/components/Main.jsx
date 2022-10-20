@@ -60,7 +60,7 @@ const Main = () => {
   };
 
   return (
-    <div className="flex bg-gray-900 items-center justify-center h-screen p-12">
+    <div className="flex flex-col xl:flex-row bg-gray-900 items-center justify-center h-screen p-12">
       <SearchSide
         handleChange={handleCityName}
         handleClick={createFullData}

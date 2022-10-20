@@ -24,11 +24,6 @@ const weatherIcon = (weatherDescription) => {
   return options[weatherDescription] ?? "Weather not found";
 };
 
-const currentDate = () => {
-  const formatDate = Moment().format("MMM Do YYYY");
-  return formatDate;
-};
-
 const Card = ({
   temperature,
   main,
@@ -39,7 +34,17 @@ const Card = ({
   maxTemp,
   pressure,
   speed,
+  today,
 }) => {
+  const currentDate = () => {
+    if (today) {
+      const formatDate = Moment().format("MMM Do YYYY");
+      return formatDate;
+    } else {
+      const formatDate = Moment().add(1, "day").format("MMM Do YYYY");
+      return formatDate;
+    }
+  };
   return (
     <div className="shadow-2xl w-11/12 h-64 rounded-2xl grid grid-cols-3 mt-6">
       <div className="self-center justify-self-center ml-12">

@@ -1,4 +1,3 @@
-import { max } from "moment";
 import React from "react";
 import Card from "./utils/Card";
 
@@ -27,6 +26,22 @@ const InfoSide = ({
           maxTemp={maxTemp}
           pressure={pressure}
           speed={speed}
+          today={true}
+        />
+      </div>
+      <h1 className="text-5xl font-bold mt-8">Tomorrow</h1>
+      <div className="flex justify-center">
+        <Card
+          temperature={temperature}
+          description={description}
+          main={main}
+          feelLike={feelLike}
+          humidity={humidity}
+          minTemp={minTemp}
+          maxTemp={maxTemp}
+          pressure={pressure}
+          speed={speed}
+          today={false}
         />
       </div>
     </div>
