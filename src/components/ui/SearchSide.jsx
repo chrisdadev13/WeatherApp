@@ -32,7 +32,6 @@ const SearchSide = ({ location, handleChange, handleClick }) => {
           <Input
             onChange={(event) => handleChange(event)}
             onClick={handleClick}
-            value={location}
           />
         </div>
       </div>

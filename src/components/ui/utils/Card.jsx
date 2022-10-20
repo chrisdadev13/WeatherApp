@@ -14,6 +14,7 @@ const weatherIcon = (weatherDescription) => {
     "few clouds": fewClouds,
     "scattered clouds": scatteredClouds,
     "broken clouds": brokenClouds,
+    "overcast clouds": brokenClouds,
     rain: rain,
     "shower rain": showerRain,
     thunderstorm: thunderstorm,
@@ -41,7 +42,7 @@ const Card = ({
 }) => {
   return (
     <div className="shadow-2xl w-11/12 h-64 rounded-2xl grid grid-cols-3 mt-6">
-      <div className="self-center justify-self-center">
+      <div className="self-center justify-self-center ml-12">
         <h1 className="text-3xl font-bold">{temperature}°C</h1>
         <div className="flex items-center">
           <h1 className="text-3xl">{main}</h1>
@@ -50,13 +51,25 @@ const Card = ({
         <h1>{currentDate()}</h1>
       </div>
       <span className="h-5/6 w-1 self-center justify-self-center bg-gray-300" />
-      <div className="self-center justify-self-center text-gray-600">
-        <p>Max Temp: {maxTemp}°</p>
-        <p>Min Temp: {minTemp}°</p>
-        <p>Feel like: {feelLike}°</p>
-        <p>humidity: {humidity}%</p>
-        <p>Pressure: {pressure}</p>
-        <p>Speed: {speed}km</p>
+      <div className="self-center justify-self-center text-gray-600 mr-12">
+        <p>
+          Max Temp: <strong>{maxTemp}°</strong>
+        </p>
+        <p>
+          Min Temp: <strong>{minTemp}°</strong>
+        </p>
+        <p>
+          Feel like: <strong>{feelLike}°</strong>
+        </p>
+        <p>
+          humidity: <strong>{humidity}%</strong>
+        </p>
+        <p>
+          Pressure: <strong>{pressure}</strong>
+        </p>
+        <p>
+          Speed: <strong>{speed}km</strong>
+        </p>
         <p></p>
       </div>
     </div>
