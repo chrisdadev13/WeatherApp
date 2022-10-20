@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import { BiTargetLock } from "react-icons/bi";
 
-const Input = ({ name, value, onChange }) => {
+const Input = ({ name, value, onChange, onClick }) => {
   return (
     <div className="flex justify-center items-center">
       <input
@@ -13,7 +13,10 @@ const Input = ({ name, value, onChange }) => {
         value={value}
         onChange={onChange}
       />
-      <p className="text-white text-2xl absolute ml-72">
+      <p
+        className="text-white cursor-pointer text-2xl absolute ml-72"
+        onClick={onClick}
+      >
         <IoIosSearch />
       </p>
       <p className="text-white text-2xl ml-4">
