@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./utils/Input";
 import { MdOutlineLocationOn } from "react-icons/md";
 
-const SearchSide = ({ location, handleChange, handleClick }) => {
+const SearchSide = ({ location, handleChange, handleClick, handleKeyDown }) => {
   const LocationWrapper = ({ currentLocation }) => {
     return (
       <div className="flex items-center bg-gray-700 text-white w-52 h-14 rounded-lg">
@@ -32,6 +32,7 @@ const SearchSide = ({ location, handleChange, handleClick }) => {
           <Input
             onChange={(event) => handleChange(event)}
             onClick={handleClick}
+            onKeyDown={(event) => handleKeyDown(event)}
           />
         </div>
       </div>

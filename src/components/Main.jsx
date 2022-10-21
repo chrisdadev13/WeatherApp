@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SearchSide from "./ui/SearchSide";
 import InfoSide from "./ui/InfoSide";
 
@@ -24,7 +24,17 @@ const Main = () => {
   };
 
   let [cityName, setCityName] = useState();
-  let [fullData, setFullData] = useState({});
+  let [currentData, setCurrentData] = useState({
+    temperature: "",
+    description: "",
+    main: "",
+    feels_like: "",
+    temp_max: "",
+    temp_min: "",
+    pressure: "",
+    speed: "",
+    humidity: "",
+  });
 
   const handleCityName = (event) => {
     setCityName(event.target.value);
@@ -35,16 +45,16 @@ const Main = () => {
     return getWeather(city.lat, city.lon);
   };
 
-  const createFullData = async () => {
-    let data = await handleWeatherData();
-    let city = data.name;
-    let { country } = data.sys;
+  const createCurrentData = async () => {
+    let current = await handleWeatherData();
+    let city = current.name;
+    let { country } = current.sys;
     let { feels_like, humidity, pressure, temp, temp_max, temp_min } =
-      data.main;
-    let { description, main } = data.weather[0];
-    let speed = data.wind.speed;
+      current.main;
+    let { description, main } = current.weather[0];
+    let speed = current.wind.speed;
 
-    setFullData({
+    setCurrentData({
       city,
       country,
       feels_like,
@@ -59,24 +69,25 @@ const Main = () => {
     });
   };
 
+  const createData = async () => {
+    createCurrentData();
+  };
+
+  const createDataEnter = async (event) => {
+    if (event.keyCode === 13) {
+      createCurrentData();
+    }
+  };
+
   return (
     <div className="flex flex-col xl:flex-row bg-gray-900 items-center justify-center h-screen p-12">
       <SearchSide
         handleChange={handleCityName}
-        handleClick={createFullData}
-        location={fullData.city}
+        handleKeyDown={createDataEnter}
+        handleClick={createData}
+        location={currentData.city}
       />
-      <InfoSide
-        temperature={(fullData.temp - 273).toFixed()}
-        description={fullData.description}
-        main={fullData.main}
-        feelLike={(fullData.feels_like - 273).toFixed()}
-        humidity={fullData.humidity}
-        minTemp={(fullData.temp_min - 273).toFixed()}
-        maxTemp={(fullData.temp_max - 273).toFixed()}
-        speed={fullData.speed}
-        pressure={fullData.pressure}
-      />
+      <InfoSide currentData={currentData} />
     </div>
   );
 };
