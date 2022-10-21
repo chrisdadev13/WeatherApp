@@ -3,6 +3,17 @@
 I build this project in order to practice APIs data fetching, with JavaScript, for "The Odin Project" syllabus.
 In the road I noticed that I still have to work and learn way more about responsive front-end development, and optimize and clean some functions in the program.
 
+---
+
+## TODO
+
+- [ ] create my own UI
+- [ ] improve the responsive UI
+- [ ] clean the code
+- [ ] add forecasted data
+
+---
+
 ## Preview
 
 ![Weather App preview](./preview.png)
