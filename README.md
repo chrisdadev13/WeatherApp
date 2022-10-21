@@ -8,7 +8,7 @@ In the road I noticed that I still have to work and learn way more about respons
 ## TODO
 
 - [ ] create my own UI
-- [ ] improve the responsive UI
+- [ ] make it responsive
 - [ ] clean the code
 - [ ] add forecasted data
 
@@ -35,7 +35,7 @@ npm install
 npm start
 ```
 
-Navigate to[localhost:3000](http://localhost:3000/)
+Navigate to [localhost:3000](http://localhost:3000/)
 
 ### Stack
 
