@@ -5,7 +5,7 @@ In the road I noticed that I still have to work and learn way more about respons
 
 ## Preview
 
-(./preview.png)
+(/preview.png)
 
 The UI is strongly based on this [weather website](https://dribbble.com/shots/14628486-Forecast-Weather-Website-Design) design by Guhan Bask.
 The [icons](https://www.figma.com/community/file/1126777451931792118) I used were created by Bill Arve, I really think it is the best free design of this style on the internet.
